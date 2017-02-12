@@ -1,7 +1,59 @@
 # Config-Laravel
 
 ——- Instalação do Docker ———-
+
 curl -sSL http://get.docker.com | sh
 docker run -it --name APLICAÇÂO -v ~/projects/:/var/www/ -p 80:80 debian
 sudo apt-get install -y php5
 sudo apt-get install -y apache2
+sudo apt install mysql
+
+——- Instalação do Composer ———-
+
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
+
+——- Criação do projeto ———-
+
+composer create-project --prefer-dist laravel/laravel blog
+
+——- configuração do projeto ———-
+
+sudo chgrp -R www-data /var/www/html/blog
+sudo chmod -R 775 /var/www/html/blog/storage
+
+——- configuração do Apache ———-
+
+cd /etc/apache2/sites-available
+sudo nano laravel.conf
+
+<VirtualHost *:80>
+    ServerName localhost
+
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/html/
+
+    <Directory /var/www/html>
+        AllowOverride All
+    </Directory>
+</VirtualHost>
+
+sudo a2dissite 000-default.conf
+sudo a2ensite laravel.conf
+sudo a2enmod rewrite
+sudo service apache2 restart
+
+
+
+——- Caso ocorra algum problema ———-
+
+Error in exception handler
+
+php artisan cache:clear 
+chmod -R 777 app/storage 
+composer dump-autoload
+
+
+
+
+
