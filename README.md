@@ -21,7 +21,7 @@ sudo nano laravel.conf
         AllowOverride All
     </Directory>
 </VirtualHost>
-
+---
 
 ——- Instalação do Composer ———-
 
