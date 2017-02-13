@@ -8,7 +8,7 @@ sudo apt-get install -y php5
 sudo apt-get install -y apache2
 sudo apt install mysql
 
-### ——- Instalação do Composer ———-
+## —— Instalação do Composer ——
 
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
