@@ -22,22 +22,20 @@ composer create-project --prefer-dist laravel/laravel blog
 sudo chgrp -R www-data /var/www/html/blog
 sudo chmod -R 775 /var/www/html/blog/storage
 
-## configuração do Apache 
-## *** COMANDOS DOCKER ***
+## *** configuração do Apache  ***
 cd /etc/apache2/sites-available
 sudo nano laravel.conf
 
-<VirtualHost *:80>
-     ServerName zf2-tutorial.localhost
-     DocumentRoot /path/to/zf2-tutorial/public
-     SetEnv APPLICATION_ENV "development"
-     <Directory /path/to/zf2-tutorial/public>
-         DirectoryIndex index.php
-         AllowOverride All
-         Order allow,deny
-         Allow from all
-     </Directory>
- </VirtualHost>
+# <VirtualHost *:80>
+#     ServerName zf2-tutorial.localhost
+#     DocumentRoot /path/to/zf2-tutorial/public
+#     <Directory /path/to/zf2-tutorial/public>
+#         DirectoryIndex index.php
+#         AllowOverride All
+#         Order allow,deny
+#         Allow from all
+#     </Directory>
+# </VirtualHost>
 
 sudo a2dissite 000-default.conf
 sudo a2ensite laravel.conf
