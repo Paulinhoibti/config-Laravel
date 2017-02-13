@@ -28,15 +28,16 @@ cd /etc/apache2/sites-available
 sudo nano laravel.conf
 
 <VirtualHost *:80>
-    ServerName localhost
-
-    ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/html/
-
-    <Directory /var/www/html>
-        AllowOverride All
-    </Directory>
-</VirtualHost>
+     ServerName zf2-tutorial.localhost
+     DocumentRoot /path/to/zf2-tutorial/public
+     SetEnv APPLICATION_ENV "development"
+     <Directory /path/to/zf2-tutorial/public>
+         DirectoryIndex index.php
+         AllowOverride All
+         Order allow,deny
+         Allow from all
+     </Directory>
+ </VirtualHost>
 
 sudo a2dissite 000-default.conf
 sudo a2ensite laravel.conf
