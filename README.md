@@ -8,21 +8,21 @@ sudo apt-get install -y php5
 sudo apt-get install -y apache2
 sudo apt install mysql
 
-## —— Instalação do Composer ——
+## Instalação do Composer ——
 
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 
 
-#——- Criação do projeto ———-
+## Criação do projeto ———-
 
 composer create-project --prefer-dist laravel/laravel blog
 
-#——- configuração do projeto ———-
+## configuração do projeto ———-
 
 sudo chgrp -R www-data /var/www/html/blog
 sudo chmod -R 775 /var/www/html/blog/storage
 
-#——- configuração do Apache ———-
+## configuração do Apache ———-
 
 cd /etc/apache2/sites-available
 sudo nano laravel.conf
@@ -46,7 +46,7 @@ sudo service apache2 restart
 
 
 
-#——- Caso ocorra algum problema ———-
+## Caso ocorra algum problema ———-
 
 Error in exception handler
 
