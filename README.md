@@ -8,6 +8,7 @@ sudo apt-get install -y php5
 sudo apt-get install -y apache2
 sudo apt install mysql
 
+
 ## Instalação do Composer ##
 
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
@@ -17,10 +18,12 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 
 composer create-project --prefer-dist laravel/laravel blog
 
+
 ## configuração do projeto 
 
 sudo chgrp -R www-data /var/www/html/blog
 sudo chmod -R 775 /var/www/html/blog/storage
+
 
 ## *** configuração do Apache  ***
 cd /etc/apache2/sites-available
@@ -45,8 +48,6 @@ sudo service apache2 restart
 
 
 ## Caso ocorra algum problema
-
-Error in exception handler
 
 php artisan cache:clear 
 chmod -R 777 app/storage 
