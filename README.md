@@ -25,7 +25,7 @@ sudo chgrp -R www-data /var/www/html/blog
 sudo chmod -R 775 /var/www/html/blog/storage
 
 
-## *** configuração do Apache  ***
+## *** Configuração do Apache  ***
 cd /etc/apache2/sites-available
 sudo nano laravel.conf
 
