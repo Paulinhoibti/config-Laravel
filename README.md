@@ -2,6 +2,7 @@
 
 ## Instalação do Docker 
 
+
 curl -sSL http://get.docker.com | sh
 docker run -it --name APLICAÇÂO -v ~/projects/:/var/www/ -p 80:80 debian
 sudo apt-get install -y php5
@@ -11,7 +12,9 @@ sudo apt install mysql
 
 ## Instalação do Composer ##
 
+
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+
 
 
 ## Criação do projeto ##
@@ -26,6 +29,7 @@ sudo chmod -R 775 /var/www/html/blog/storage
 
 
 ## *** Configuração do Apache  ***
+
 cd /etc/apache2/sites-available
 sudo nano laravel.conf
 
@@ -48,11 +52,9 @@ sudo service apache2 restart
 
 
 ## Caso ocorra algum problema
-
 php artisan cache:clear 
 chmod -R 777 app/storage 
 composer dump-autoload
-
 
 
 ## ***
