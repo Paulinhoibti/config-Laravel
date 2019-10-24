@@ -1,4 +1,4 @@
-### GUIA DE INSTALAÇÃO E COMANDOS DO DOCKER Config-Laravel
+### GUIA DE INSTALAÇÃO E COMANDOS DO DOCKER
 
 ## Instalação do Docker 
 
