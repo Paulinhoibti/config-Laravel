@@ -7,7 +7,7 @@ curl -sSL http://get.docker.com | sh
 docker run -it --name APLICAÇÂO -v ~/projects/:/var/www/ -p 80:80 debian
 sudo apt-get install -y php5
 sudo apt-get install -y apache2
-sudo apt install mysql
+sudo apt install mysql 123
 
 
 ## Instalação do Composer no Projeto ##
